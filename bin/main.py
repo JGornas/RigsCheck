@@ -37,11 +37,9 @@ if __name__ == "__main__":
             get_stats()
             input("Press Enter to refresh...\n")
             os.system('cls')
-    elif args.interval != 0:
+    else:
         while True:
             get_stats()
             print(f"Next refresh in {int(args.interval / 60)} minutes")
             time.sleep(args.interval)
             os.system('cls')
-    else:
-        input("No configuration entered! Press Enter to exit.")
