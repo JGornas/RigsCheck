@@ -1,2 +1,1 @@
-cd C:\Users\Jake\Desktop\RigsCheck\bin
-C:\Users\Jake\Desktop\RigsCheck\bin\venv\scripts\python C:\Users\Jake\Desktop\RigsCheck\bin\main.py --wallet_eth 0x44cf7A408e142C302A2042465587aBd2c5987CD9 --wallet_rvn RUNZwtV9i4mEiiYK14QCHf4ZNLjUFLueQK --save
+python .\bin\main.py --wallet_eth 0x44cf7A408e142C302A2042465587aBd2c5987CD9 --wallet_rvn RUNZwtV9i4mEiiYK14QCHf4ZNLjUFLueQK --save

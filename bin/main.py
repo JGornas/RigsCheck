@@ -13,12 +13,12 @@ def get_stats():
         eth = EthWalletStats(args.wallet_eth)
         eth.print()
         if args.save:
-            eth.save("final_test_eth.csv")
+            eth.save(os.path.join("..", "ETH_data.csv"))
     if args.wallet_rvn:
         rvn = RvnWalletStats(args.wallet_rvn)
         rvn.print()
         if args.save:
-            rvn.save("final_test_rvn.csv")
+            rvn.save(os.path.join("..", "RVN_data.csv"))
 
 
 if __name__ == "__main__":
@@ -29,17 +29,19 @@ if __name__ == "__main__":
                         type=str, default="")
     parser.add_argument("-s", "--save", help="Save to a file 'coin_data.csv'", action="store_true")
     parser.add_argument("-i", "--interval", help="Set refresh interval for automatic refresh",
-                        type=int, default=0)
+                        type=int)
     args = parser.parse_args()
 
-    if args.interval == 0:
+    if not args.interval:
         while True:
             get_stats()
             input("Press Enter to refresh...\n")
             os.system('cls')
-    else:
+    elif args.interval != 0:
         while True:
             get_stats()
             print(f"Next refresh in {int(args.interval / 60)} minutes")
             time.sleep(args.interval)
             os.system('cls')
+    else:
+        input("No configuration entered! Press Enter to exit.")
