@@ -13,12 +13,12 @@ def get_stats():
         eth = EthWalletStats(args.wallet_eth)
         eth.print()
         if args.save:
-            eth.save(os.path.join("..", "ETH_data.csv"))
+            eth.save("ETH_data.csv")
     if args.wallet_rvn:
         rvn = RvnWalletStats(args.wallet_rvn)
         rvn.print()
         if args.save:
-            rvn.save(os.path.join("..", "RVN_data.csv"))
+            rvn.save("RVN_data.csv")
 
 
 if __name__ == "__main__":
