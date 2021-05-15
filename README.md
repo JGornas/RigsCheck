@@ -15,14 +15,19 @@ or use install.bat.
 
 ## Usage
 
-usage: main.py [-h] [-we WALLET_ETH] [-wr WALLET_RVN] [-s] [-i INTERVAL]
+```bash
+main.py [-h] [-we WALLET_ETH] [-wr WALLET_RVN] [-s] [-i INTERVAL]
+```
+ 
+Optional arguments:
 
-optional arguments:
-  -h, --help - show this help message and exit
-  -we WALLET_ETH, --wallet_eth WALLET_ETH - Ethereum wallet address
-  -wr WALLET_RVN, --wallet_rvn WALLET_RVN - Ravencoin wallet address
-  -s, --save - Save to a file 'coin_data.csv'
-  -i INTERVAL, --interval INTERVAL - Set refresh interval for automatic refresh
+```bash
+-h, --help - show this help message and exit\n
+-we WALLET_ETH, --wallet_eth WALLET_ETH - Ethereum wallet address\n
+-wr WALLET_RVN, --wallet_rvn WALLET_RVN - Ravencoin wallet address\n
+-s, --save - Save to a file 'coin_data.csv'\n
+-i INTERVAL, --interval INTERVAL - Set refresh interval for automatic refresh\n
+```
 
 ## License
 
