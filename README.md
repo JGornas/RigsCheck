@@ -1,6 +1,6 @@
 # RigsCheck
 
-RigsCheck - Python API wrapper for ethermine.org and ravencoin.flypool.org. Gathers statistics about a workers and prints it in command line. Can be set to refresh automaticaly every x seconds. Can be set to save stats to a .csv file.
+RigsCheck - Python API wrapper for ethermine.org and ravencoin.flypool.org. Gathers statistics about workers and prints it in command line. Can be set to refresh automaticaly every x seconds. Can be set to save statistics to a .csv file.
 
 
 ## Installation
@@ -22,11 +22,11 @@ main.py [-h] [-we WALLET_ETH] [-wr WALLET_RVN] [-s] [-i INTERVAL]
 Optional arguments:
 
 ```bash
--h, --help - show this help message and exit\n
--we WALLET_ETH, --wallet_eth WALLET_ETH - Ethereum wallet address\n
--wr WALLET_RVN, --wallet_rvn WALLET_RVN - Ravencoin wallet address\n
--s, --save - Save to a file 'coin_data.csv'\n
--i INTERVAL, --interval INTERVAL - Set refresh interval for automatic refresh\n
+-h, --help - show this help message and exit
+-we WALLET_ETH, --wallet_eth WALLET_ETH - Ethereum wallet address
+-wr WALLET_RVN, --wallet_rvn WALLET_RVN - Ravencoin wallet address
+-s, --save - Save to a file 'coin_data.csv'
+-i INTERVAL, --interval INTERVAL - Set refresh interval for automatic refresh
 ```
 
 ## License
