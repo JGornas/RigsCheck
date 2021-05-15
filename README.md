@@ -5,6 +5,7 @@ RigsCheck - Python API wrapper for ethermine.org and ravencoin.flypool.org. Gath
 
 ## Installation
 
+Installed Python 3.+ is required.
 Use the package manager pip to install required libraries.
 
 ```bash
