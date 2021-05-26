@@ -16,12 +16,12 @@ class EthWalletStats:
         exchanger = Exchanger()
         miner_stats = requests.get(
             f"https://api.ethermine.org/miner/{self.wallet_address}/currentStats").json()
-        self.wallet_stats["eth_price_usd"] = requests.get('https://api.ethermine.org/poolStats').json()['data']['price']['usd']
+        self.wallet_stats["eth_price_usd"] = requests.get('https://api.ethermine.org/poolStats') \
+                                                     .json()['data']['price']['usd']
         self.wallet_stats["eth_price_pln"] = round(exchanger.usd_to_pln(self.wallet_stats["eth_price_usd"]), 2)
         self.wallet_stats["daily_estimate_eth"] = round(miner_stats['data']['coinsPerMin'] * 60 * 24, 4)
         self.wallet_stats["daily_estimate_usd"] = round(miner_stats['data']['usdPerMin'] * 60 * 24, 2)
-        self.wallet_stats["daily_estimate_pln"] = round(60 * 24 *
-                                                        exchanger.usd_to_pln(miner_stats['data']['usdPerMin']), 2)
+        self.wallet_stats["daily_estimate_pln"] = round(exchanger.usd_to_pln(miner_stats['data']['usdPerMin'] * 60 * 24), 2)
         self.wallet_stats["monthly_estimate_eth"] = round(self.wallet_stats["daily_estimate_eth"] * 30, 3)
         self.wallet_stats["monthly_estimate_usd"] = round(self.wallet_stats["daily_estimate_usd"] * 30, 2)
         self.wallet_stats["monthly_estimate_pln"] = round(self.wallet_stats["daily_estimate_pln"] * 30, 2)

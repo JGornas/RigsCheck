@@ -15,7 +15,7 @@ def get_stats():
             eth.print()
             if args.save:
                 eth.save("ETH_data.csv")
-        except:
+        except KeyError:
             print("Error getting eth data.")
     if args.wallet_rvn:
         try:
@@ -23,7 +23,7 @@ def get_stats():
             rvn.print()
             if args.save:
                 rvn.save("RVN_data.csv")
-        except:
+        except KeyError:
             print("Error getting rvn data")
 
 

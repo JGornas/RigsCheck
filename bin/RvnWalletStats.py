@@ -16,12 +16,12 @@ class RvnWalletStats:
         exchanger = Exchanger()
         miner_stats = requests.get(
             f"https://api-ravencoin.flypool.org/miner/{self.wallet_address}/currentStats").json()
-        self.wallet_stats["rvn_price_usd"] = requests.get('https://api-ravencoin.flypool.org/poolStats').json()['data']['price']['usd']
+        self.wallet_stats["rvn_price_usd"] = requests.get('https://api-ravencoin.flypool.org/poolStats') \
+                                                     .json()['data']['price']['usd']
         self.wallet_stats["rvn_price_pln"] = round(exchanger.usd_to_pln(self.wallet_stats["rvn_price_usd"]), 2)
         self.wallet_stats["daily_estimate_rvn"] = round(miner_stats['data']['coinsPerMin'] * 60 * 24, 3)
         self.wallet_stats["daily_estimate_usd"] = round(miner_stats['data']['usdPerMin'] * 60 * 24, 2)
-        self.wallet_stats["daily_estimate_pln"] = round(60 * 24 *
-                                                        exchanger.usd_to_pln(miner_stats['data']['usdPerMin']), 2)
+        self.wallet_stats["daily_estimate_pln"] = round(exchanger.usd_to_pln(miner_stats['data']['usdPerMin'] * 60 * 24), 2)
         self.wallet_stats["monthly_estimate_rvn"] = round(self.wallet_stats["daily_estimate_rvn"] * 30, 2)
         self.wallet_stats["monthly_estimate_usd"] = round(self.wallet_stats["daily_estimate_usd"] * 30, 2)
         self.wallet_stats["monthly_estimate_pln"] = round(self.wallet_stats["daily_estimate_pln"] * 30, 2)
