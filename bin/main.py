@@ -10,15 +10,21 @@ from RvnWalletStats import RvnWalletStats
 def get_stats():
     print(datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
     if args.wallet_eth:
-        eth = EthWalletStats(args.wallet_eth)
-        eth.print()
-        if args.save:
-            eth.save("ETH_data.csv")
+        try:
+            eth = EthWalletStats(args.wallet_eth)
+            eth.print()
+            if args.save:
+                eth.save("ETH_data.csv")
+        except:
+            print("Error getting eth data.")
     if args.wallet_rvn:
-        rvn = RvnWalletStats(args.wallet_rvn)
-        rvn.print()
-        if args.save:
-            rvn.save("RVN_data.csv")
+        try:
+            rvn = RvnWalletStats(args.wallet_rvn)
+            rvn.print()
+            if args.save:
+                rvn.save("RVN_data.csv")
+        except:
+            print("Error getting rvn data")
 
 
 if __name__ == "__main__":

@@ -23,4 +23,4 @@ class Exchanger:
         self.rvn_price_pln = round(self.rvn_price_usd * self.usd_to_pln_ratio, 2)
 
     def usd_to_pln(self, usd):
-        return round(usd * self.usd_to_pln_ratio, 2)
+        return round(usd * self.usd_to_pln_ratio, 3)

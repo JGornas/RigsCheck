@@ -14,5 +14,5 @@ class CsvSaver:
         with open(filename, "a") as file:
             file.write(f"{datetime.now().strftime('%d/%m/%Y %H:%M:%S')},")
             for stat in wallet_stats:
-                file.write(f"{str(wallet_stats[stat])},")
+                file.write(f"{round(wallet_stats[stat], 3)},")
             file.write("\n")
